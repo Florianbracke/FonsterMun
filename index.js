@@ -1,15 +1,28 @@
-// TODO
-// - meer classes? Modal, ..
-// - controler systeem? Classe kan enkel state bepalen ( is_moveable, is_targetable,...)
+import { Fonster } from '/model/fonster.js'
+import { GameController } from '/controller/GameController.js'
+import { GameView } from '/view/GameView.js'
 
+document.addEventListener('DOMContentLoaded', () => {
+  const fonsters = [
+    new Fonster('fonster1'),
+    new Fonster('fonster2'),
+    new Fonster('fonster3')
+  ];
+  const gameController = new GameController(fonsters);
+  const gameView = new GameView(fonsters);
 
-import { Game } from "/classes/game.js";
+  // Stel een fonster in als de actieve fonster (bijvoorbeeld de eerste)
+  gameController.setActiveFonster(fonsters[0]);
 
-window.addEventListener("load", () => {
-	const game = new Game();
+  // Simuleer wisselen van actieve fonster na 5 seconden (voor demonstratie)
+  setTimeout(() => {
+    gameController.setActiveFonster(fonsters[1]);
+  }, 5000);
 
-	game.addFonster( 'tetten', 10,0, 100,10,10,10,10)
-	game.addFonster( 'konten', 150,50, 100,10,10,10,10)
+  function gameLoop() {
+    gameView.update();
+    requestAnimationFrame(gameLoop);
+  }
 
-
-})
+  gameLoop();
+});
