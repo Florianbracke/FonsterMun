@@ -1,0 +1,43 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	min-width: 100vw;
+	overflow: hidden;
+}
+
+.info-box{
+	display: flex;
+	gap: 1rem;
+}
+
+.card {
+	width: 600px;
+	height: 400px;
+	display: block;
+	overflow: auto;
+	border: 2px solid #efbf04;
+}
+
+.gameWrapper {
+	width: 600px;
+	height: 400px;
+	display: flex;
+	overflow: auto;
+	border: 2px solid #efbf04;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.fonster{
+	position: absolute;
+	border: 2px solid #a9bd00;
+	height: 9px;
+	width: 9px;
+}
+
+.fonster.active_fonster{
+	background:  #a9bd00;
+}
