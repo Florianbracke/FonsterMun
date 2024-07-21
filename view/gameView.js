@@ -1,3 +1,8 @@
+//TODO
+// - fonsters juiste classes meegeven
+// - fonsters geen css properties meegeven
+// - fonsters op gameContainer laten toekomen ipv body
+
 export class GameView {
 	constructor(fonsters) {
 		this.fonsters = fonsters;
