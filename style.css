@@ -8,7 +8,7 @@ body {
 	overflow: hidden;
 }
 
-.info-box{
+.info-box {
 	display: flex;
 	gap: 1rem;
 }
@@ -31,13 +31,13 @@ body {
 	position: relative;
 }
 
-.fonster{
+.fonster {
 	position: absolute;
 	border: 2px solid #a9bd00;
 	height: 9px;
 	width: 9px;
 }
 
-.fonster.active_fonster{
-	background:  #a9bd00;
+.fonster.active_fonster {
+	background: #a9bd00;
 }
