@@ -9,6 +9,7 @@ export class GameController {
 		if (this.activeFonster) {
 			this.activeFonster.makeUnplayable();
 		}
+
 		this.activeFonster = fonster;
 		this.activeFonster.makePlayable();
 	}

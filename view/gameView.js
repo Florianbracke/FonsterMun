@@ -9,9 +9,8 @@ export class GameView {
 		this.fonsterElements = this.fonsters.map((fonster) => {
 			const element = document.createElement("div");
 			element.id = fonster.name;
-			element.style.position = "absolute";
-			element.style.backgroundColor = "red";
-			document.body.appendChild(element);
+			element.className = fonster.name + " fonster";
+			document.querySelector(".gameWrapper").appendChild(element);
 			return element;
 		});
 	}

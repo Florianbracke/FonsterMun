@@ -15,19 +15,20 @@ export class Fonster {
 	}
 
 	move(direction) {
+		let step = 10;
 		if (this.is_playable) {
 			switch (direction) {
 				case "up":
-					this.y -= 1;
+					this.y -= step;
 					break;
 				case "down":
-					this.y += 1;
+					this.y += step;
 					break;
 				case "left":
-					this.x -= 1;
+					this.x -= step;
 					break;
 				case "right":
-					this.x += 1;
+					this.x += step;
 					break;
 			}
 		}
