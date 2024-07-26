@@ -1,7 +1,5 @@
 //TODO
-// - fonsters juiste classes meegeven
-// - fonsters geen css properties meegeven
-// - fonsters op gameContainer laten toekomen ipv body
+// - gameview moet wss ook map meekrijgen
 
 export class GameView {
 	constructor(fonsters) {

@@ -1,6 +1,14 @@
+// TODO
+// - form fonstergang
+// - coole manier van evolueren?
+
+/*  
+	eat - get eaten, fight - flee, sleep - awake (?), form fonstergang - solo
+*/
 export class Fonster {
-	constructor(name) {
+	constructor(name, type) {
 		this.name = name;
+		this.type = type;
 		this.is_playable = false;
 		this.x = 0;
 		this.y = 0;
@@ -16,21 +24,27 @@ export class Fonster {
 
 	move(direction) {
 		let step = 10;
-		if (this.is_playable) {
-			switch (direction) {
-				case "up":
-					this.y -= step;
-					break;
-				case "down":
-					this.y += step;
-					break;
-				case "left":
-					this.x -= step;
-					break;
-				case "right":
-					this.x += step;
-					break;
-			}
+		switch (direction) {
+			case "up":
+				this.y -= step;
+				break;
+			case "down":
+				this.y += step;
+				break;
+			case "left":
+				this.x -= step;
+				break;
+			case "right":
+				this.x += step;
+				break;
 		}
+	}
+
+	explore() {
+		let rand = Math.random() * 2000;
+		setInterval(() => {
+			this.move("right");
+		}, rand);
+		console.log(rand);
 	}
 }

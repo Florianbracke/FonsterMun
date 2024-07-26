@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const fonsters = [new Fonster("fonster1"), new Fonster("fonster2"), new Fonster("fonster3")];
 	const gameController = new GameController(fonsters);
 	const gameView = new GameView(fonsters);
+	const updateInterval = 100;
 
 	gameController.setActiveFonster(fonsters[0]);
 
@@ -15,8 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function gameLoop() {
 		gameView.update();
-		requestAnimationFrame(gameLoop);
+		//		requestAnimationFrame(gameLoop);
+		gameController.setFonsterExploration(fonsters[1]);
 	}
 
-	gameLoop();
+	setInterval(gameLoop, updateInterval);
 });

@@ -2,7 +2,7 @@ export class GameController {
 	constructor(fonsters) {
 		this.fonsters = fonsters;
 		this.activeFonster = null;
-		this.initEventListeners();
+		this.movementActiveFonster();
 	}
 
 	setActiveFonster(fonster) {
@@ -14,7 +14,7 @@ export class GameController {
 		this.activeFonster.makePlayable();
 	}
 
-	initEventListeners() {
+	movementActiveFonster() {
 		document.addEventListener("keydown", (event) => {
 			if (this.activeFonster) {
 				switch (event.key) {
@@ -33,5 +33,16 @@ export class GameController {
 				}
 			}
 		});
+	}
+
+	setFonsterExploration(fonster) {
+		if (fonster) {
+			if (fonster.x > -1 && fonster.x < 100) {
+				fonster.move("right");
+			}
+			if (fonster.y > -1 && fonster.y < 100) {
+				fonster.move("down");
+			}
+		}
 	}
 }
