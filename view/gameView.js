@@ -2,8 +2,18 @@
 // - gameview moet wss ook map meekrijgen
 
 export class GameView {
-	constructor(fonsters) {
+	constructor(fonsters, foods) {
 		this.fonsters = fonsters;
+		this.foods = foods;
+
+		this.foodElements = this.foods.map((food) => {
+			const element = document.createElement("div");
+			element.id = food.name;
+			element.className = food.name + " food";
+			document.querySelector(".gameWrapper").appendChild(element);
+			return element;
+		});
+
 		this.fonsterElements = this.fonsters.map((fonster) => {
 			const element = document.createElement("div");
 			element.id = fonster.name;

@@ -1,5 +1,6 @@
 export class Food {
-	constructor(x, y, nutrition) {
+	constructor(name, x, y, nutrition) {
+		this.name = name;
 		this.x = x;
 		this.y = y;
 		this.isEaten = false;
