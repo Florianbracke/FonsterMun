@@ -5,13 +5,25 @@
 /*  
 	eat - get eaten, fight - flee, sleep - awake (?), form fonstergang - solo
 */
+
 export class Fonster {
-	constructor(name, type) {
+	constructor(name, type, hp, ep) {
 		this.name = name;
 		this.type = type;
 		this.is_playable = false;
 		this.x = 0;
 		this.y = 0;
+		this.hp = hp;
+		this.ep = ep;
+	}
+
+	setPosition(x, y) {
+		if (this.x !== x) {
+			this.x = x;
+		}
+		if (this.y !== y) {
+			this.y = y;
+		}
 	}
 
 	makePlayable() {
