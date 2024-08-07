@@ -3,21 +3,28 @@ import { GameController } from "/controller/gameController.js";
 import { GameView } from "/view/gameView.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const fonsters = [new Fonster("fonster1"), new Fonster("fonster2"), new Fonster("fonster3")];
-	const gameController = new GameController(fonsters);
-	const gameView = new GameView(fonsters);
+
+	// Variables
 	const updateInterval = 100;
 
-	gameController.setActiveFonster(fonsters[0]);
+	//create and map all fonsters
+	const fonsters = [new Fonster("fonster1"), new Fonster("fonster2"), new Fonster("fonster3")];
+	// init gameController
+	const gameController = new GameController(fonsters);
+	// init gameView with all Fonsters, items, trees,...
+	const gameView = new GameView(fonsters);
 
-	setTimeout(() => {
-		gameController.setActiveFonster(fonsters[1]);
-	}, 5000);
+
+
+	//gameController.setActiveFonster(fonsters[0]);
+
+	// setTimeout(() => {
+	// 	gameController.setActiveFonster(fonsters[1]);
+	// }, 5000);
 
 	function gameLoop() {
 		gameView.update();
-		//		requestAnimationFrame(gameLoop);
-		gameController.setFonsterExploration(fonsters[1]);
+		//gameController.setFonsterExploration(fonsters[1]);
 	}
 
 	setInterval(gameLoop, updateInterval);
