@@ -2,7 +2,7 @@ export class GameController {
 	constructor(fonsters) {
 		this.fonsters = fonsters;
 		this.activeFonster = null;
-		this.movementActiveFonster();
+		//this.movementActiveFonster();
 	}
 
 	// setActiveFonster(fonster) {

@@ -4,36 +4,38 @@
 export class GameView {
 	constructor(fonsters) {
 		this.fonsters = fonsters;
+		console.log(this.fonsters);
 	}
 
-	update() {
-
-		this.fonsters.forEach(fonster => {
+	init() {
+		this.fonsters.forEach((fonster) => {
 			const fonsterDiv = document.createElement("div");
-			fonsterDiv.id = fonster.name;
+			fonsterDiv.id = fonster.id;
 			fonsterDiv.className = fonster.name + " fonster";
 			fonsterDiv.style.left = `${fonster.x}px`;
 			fonsterDiv.style.top = `${fonster.y}px`;
 			document.querySelector(".gameWrapper").appendChild(fonsterDiv);
 		});
+	}
 
-		// Create Fonster divs
-		// this.fonsterElements = this.fonsters.map((fonster) => {
-		// 	const element = document.createElement("div");
-		// 	element.id = fonster.name;
-		// 	element.className = fonster.name + " fonster";
-		// 	document.querySelector(".gameWrapper").appendChild(element);
-		// 	return element;
-		// });
-		// // Set Fonster position
-		// this.fonsters.forEach((fonster, index) => {
-		// 	const element = this.fonsterElements[index];
-		// 	element.style.left = `${fonster.x}px`;
-		// 	element.style.top = `${fonster.y}px`;
-		// });
+	createTerrain() {
+		const terrainHeight = 40;
+		const terrainWidth = 60;
+		let tile = document.createElement("div");
+		const tileSize = 10;
+		tile.className = "tile";
+		tile.style.width = tileSize + "px";
+		tile.style.height = tileSize + "px";
+		for (let heightIndex = 0; heightIndex < terrainHeight; heightIndex++) {
+			for (let widthIndex = 0; widthIndex < terrainWidth; widthIndex++) {
+				let newTile = tile.cloneNode(true);
+				newTile.style.left = widthIndex * tileSize + "px";
+				newTile.style.top = heightIndex * tileSize + "px";
+				document.querySelector(".gameWrapper").appendChild(newTile);
+			}
+		}
 	}
 
 	// fromJson()
 	// toJson()
-
 }
