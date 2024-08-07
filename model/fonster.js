@@ -2,12 +2,13 @@
 // - form fonstergang
 // - coole manier van evolueren?
 
-/*  
+/*
 	eat - get eaten, fight - flee, sleep - awake (?), form fonstergang - solo
 */
 
 export class Fonster {
 	constructor(name, type, hp, ep) {
+		this.id = new Date().valueOf();
 		this.name = name;
 		this.type = type;
 		this.is_playable = false;
@@ -53,10 +54,19 @@ export class Fonster {
 	}
 
 	explore() {
-		let rand = Math.random() * 2000;
-		setInterval(() => {
-			this.move("right");
-		}, rand);
-		console.log(rand);
+		// let rand = Math.random() * 2000;
+		// setInterval(() => {
+		// 	this.move("right");
+		// }, rand);
+		// console.log(rand);
+		console.log('Fonster-' + this.fonster.id + ' is currently exploring');
+	}
+
+	eat(){
+		console.log('Fonster-' + this.fonster.id + ' is currently eating');
+	}
+
+	sleep(){
+		console.log('Fonster-' + this.fonster.id + ' is currently sleeping');
 	}
 }

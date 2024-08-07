@@ -1,6 +1,6 @@
 import { Fonster } from "/model/fonster.js";
-import { GameController } from "/controller/GameController.js";
-import { GameView } from "/view/GameView.js";
+import { GameController } from "/controller/gameController.js";
+import { GameView } from "/view/gameView.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const fonsters = [new Fonster("fonster1"), new Fonster("fonster2"), new Fonster("fonster3")];

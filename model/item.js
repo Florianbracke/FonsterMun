@@ -1,5 +1,6 @@
 export class Item {
 	constructor(x, y, healtPoints, defense) {
+		this.id = new Date().valueOf();
 		this.x = x;
 		this.y = y;
 		this.healtPoints = healtPoints;

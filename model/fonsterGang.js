@@ -6,6 +6,6 @@
 // if the opponent is crazy weak -> fonster eat
 // if the oppenent is around same strenght -> maybe work together, same_type || same_specie == higher chance (but definitly not always)
 
-export class FonsterGang {
-	constructor(fonsters) {}
-}
+
+
+// nog te vroeg, en moet dit wel een classe zijn?

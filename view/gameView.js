@@ -2,9 +2,8 @@
 // - gameview moet wss ook map meekrijgen
 
 export class GameView {
-	constructor(fonsters, foods) {
+	constructor(fonsters) {
 		this.fonsters = fonsters;
-		this.foods = foods;
 
 		this.fonsterElements = this.fonsters.map((fonster) => {
 			const element = document.createElement("div");
@@ -22,4 +21,8 @@ export class GameView {
 			element.style.top = `${fonster.y}px`;
 		});
 	}
+
+	// fromJson()
+	// toJson()
+
 }
