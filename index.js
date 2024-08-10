@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const gameController = new GameController(fonsters);
 	// init gameView with all Fonsters, items, trees,...
 	const gameView = new GameView(fonsters);
-	gameView.init();
-	gameView.createTerrain();
+	gameView.drawFonsters();
+	gameView.drawEnvironment();
+	//gameView.createTerrain();
 	//gameController.setActiveFonster(fonsters[0]);
 
 	// setTimeout(() => {
